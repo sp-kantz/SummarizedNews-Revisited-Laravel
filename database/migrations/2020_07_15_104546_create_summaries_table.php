@@ -16,9 +16,9 @@ class CreateSummariesTable extends Migration
         Schema::create('summaries', function (Blueprint $table) {
             $table->id();
             $table->string('summary_id');
-            $table->string('summary_title');
-            $table->string('summary_LSA');
-            $table->string('summary_graph');
+            $table->text('summary_title');
+            $table->mediumText('summary_LSA');
+            $table->mediumText('summary_graph');
             $table->timestamps();
         });
     }

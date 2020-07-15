@@ -17,8 +17,8 @@ class CreateSourcesTable extends Migration
             $table->id();
             $table->string('summary_id');
             $table->string('domain');
-            $table->string('url');
-            $table->string('title');
+            $table->text('url');
+            $table->text('title');
             $table->timestamps();
         });
     }
