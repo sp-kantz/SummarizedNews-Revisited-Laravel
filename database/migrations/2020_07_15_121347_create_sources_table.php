@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSummariesTable extends Migration
+class CreateSourcesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateSummariesTable extends Migration
      */
     public function up()
     {
-        Schema::create('summaries', function (Blueprint $table) {
+        Schema::create('sources', function (Blueprint $table) {
             $table->id();
             $table->string('summary_id');
-            $table->string('summary_title');
-            $table->string('summary_LSA');
-            $table->string('summary_graph');
+            $table->string('domain');
+            $table->string('url');
+            $table->string('title');
             $table->timestamps();
         });
     }
@@ -30,6 +30,6 @@ class CreateSummariesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('summaries');
+        Schema::dropIfExists('sources');
     }
 }
