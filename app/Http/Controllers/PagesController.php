@@ -8,7 +8,7 @@ class PagesController extends Controller
 {
     public function homepage(){
 
-        return view('index');
+        return redirect('/summaries');
     }
 
     public function about(){
@@ -16,8 +16,4 @@ class PagesController extends Controller
         return view('about');
     }
 
-    public function summary(){
-
-        return view('summary');
-    }
 }

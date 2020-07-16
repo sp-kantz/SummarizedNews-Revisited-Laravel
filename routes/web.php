@@ -15,4 +15,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'PagesController@homepage');
 Route::get('/about', 'PagesController@about');
-Route::get('/summary', 'PagesController@summary');
+
+Route::resource('/summaries', 'SummariesController');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Summary;
+use App\Source;
 
 class SummariesController extends Controller
 {
@@ -13,7 +15,10 @@ class SummariesController extends Controller
      */
     public function index()
     {
-        //
+        $summaries = Summary::paginate(2);
+
+
+        return view('summaries.index')->with('summaries', $summaries);
     }
 
     /**
@@ -45,7 +50,9 @@ class SummariesController extends Controller
      */
     public function show($id)
     {
-        //
+        $sources = Source::where('summary_id', $id)->get();
+        $summary = Summary::where('summary_id', $id)->get();
+        return view('summaries.summary')->with(['summary'=>$summary, 'sources'=>$sources]);
     }
 
     /**
