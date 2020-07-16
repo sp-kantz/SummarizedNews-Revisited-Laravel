@@ -15,10 +15,10 @@ class CreateSourcesTable extends Migration
     {
         Schema::create('sources', function (Blueprint $table) {
             $table->id();
-            $table->string('summary_id');
-            $table->string('domain');
-            $table->text('url');
-            $table->text('title');
+            $table->string('summary_id', '500');
+            $table->string('domain', '500');
+            $table->string('url', '1000');
+            $table->string('title', '3000');
             $table->timestamps();
         });
     }

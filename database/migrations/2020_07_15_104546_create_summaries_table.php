@@ -15,10 +15,10 @@ class CreateSummariesTable extends Migration
     {
         Schema::create('summaries', function (Blueprint $table) {
             $table->id();
-            $table->string('summary_id');
-            $table->text('summary_title');
-            $table->mediumText('summary_LSA');
-            $table->mediumText('summary_graph');
+            $table->string('summary_id', '500');
+            $table->string('summary_title', '3000');
+            $table->text('summary_LSA');
+            $table->text('summary_graph');
             $table->timestamps();
         });
     }
