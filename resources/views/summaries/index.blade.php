@@ -1,22 +1,23 @@
 @extends('layouts.app')
-    
+
 @section('content')
 
-    <h1>Summarized News Homepage</h1>
-    <div class="well">
+    <h1>Latest News</h1>
 
-        @if (count($summaries)>0)
-            @foreach ($summaries as $summary)
+    @if (count($summaries)>0)
+    <div class="container">
+        @foreach ($summaries as $summary)
 
-                <a href="/summaries/{{$summary->summary_id}}">{{$summary->summary_title}}</a>
-                
-            @endforeach
+            <a href="/summaries/{{$summary->summary_id}}">{{$summary->summary_title}}</a>
+            
+        @endforeach
 
-            {{$summaries->links()}}
-        @else
-            <p>No summaries found</p>
-        @endif
+        {{$summaries->links()}}
     </div>
+    @else
+        <p>No summaries found</p>
+    @endif
+    
 
 @endsection
         
