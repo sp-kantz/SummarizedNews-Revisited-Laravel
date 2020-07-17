@@ -1,0 +1,14 @@
+body {
+	font-size: 18px;
+	background-color: #e6f0f2;
+	color: #000000;
+	font-family: Book Antiqua, Palatino,serif;
+}
+
+h1 {
+	font-family: Palatino Linotype, serif;
+	font-size: 46px;
+	font-weight: bold;
+	color: #3f4030;
+	text-align: center;
+}

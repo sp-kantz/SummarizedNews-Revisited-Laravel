@@ -1,19 +1,30 @@
 @extends('layouts.app')
 
+@section('header_title', 'Home')
+
+@section('header_links')
+    <link href="{{ URL::asset('css/summaries/index.css') }}" rel="stylesheet">
+@endsection
+
 @section('content')
 
     <h1>Latest News</h1>
 
     @if (count($summaries)>0)
-    <div class="container">
-        @foreach ($summaries as $summary)
 
-            <a href="/summaries/{{$summary->summary_id}}">{{$summary->summary_title}}</a>
-            
-        @endforeach
+        <div class="container" id="summaries">
+            @foreach ($summaries as $summary)
+                <div id="summary_entry">
+                    <a href="/summaries/{{$summary->summary_id}}" id="summary_link">
+                        <div id="summary_title">{{$summary->summary_title}}</div></a> 
+                </div> 
+            @endforeach
+        </div>
+        
+        <div id="pagination">
+            {{$summaries->links()}}
+        </div>
 
-        {{$summaries->links()}}
-    </div>
     @else
         <p>No summaries found</p>
     @endif

@@ -4,8 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="{{asset('css/app.css')}}">
-        <title>{{config('app.name'), 'Summarized News'}}</title>
         
+        <link rel="stylesheet" href="{{asset('css/main.css')}}">
+
+        <title>Summarized News | @yield('header_title')</title>
+
+        @yield('header_links')
     </head>
     <body>
         

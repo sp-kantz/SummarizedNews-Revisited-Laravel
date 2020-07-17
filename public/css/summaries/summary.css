@@ -1,0 +1,65 @@
+#content{
+	width: 100%;
+	position: absolute;
+}
+
+#summaries{
+	position : relative;
+	width: 77%;
+	float: left;
+	padding: 18px;
+}
+
+#summary_title{
+    color: blue;
+}
+
+#summary_method{
+    color: purple;
+}
+
+#summary_text{
+    color: seagreen;
+}
+
+#sources{
+    position : relative;
+    width:20%;
+    float: right;
+    text-align: center;
+}
+    
+#sources ul {
+    border-left: 5px solid #967a7a;
+    list-style-type: none;
+    padding: 8px 10px;
+    display: block;
+}
+
+#sources li{
+	padding: 10px;
+}
+
+#source_domain{
+    color: rgb(168, 32, 66);
+}
+
+#source_url{
+    color: grey;
+    text-decoration: none;
+	display: block;
+}
+
+#source_url:hover{
+    color: rgb(53, 23, 49);
+}
+
+#source_url visited{
+	color: rgb(60, 145, 85);
+}
+
+h2{
+    font-size: 26px;
+	color: #000000;
+	text-align: center;
+}
