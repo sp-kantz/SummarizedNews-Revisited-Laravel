@@ -13,14 +13,18 @@
     <article id="content">
         @if (count($summary)>0)
             
-        <h2 id="summary_title">{{$summary[0]->summary_title}}</h2>
+        
 
         <div class="article_textarea" id="summaries">
+
+            <h2 id="summary_title">{{$summary[0]->summary_title}}</h2>
 
             <label id="summary_method">Graph-based Summary</label>
             <article class="article_text" id="summary_text">
                 {{$summary[0]->summary_graph}}
             </article>
+
+            </br>
 
             <label id="summary_method">LSA-based Summary</label>
             <article class="article_text" id="summary_text">

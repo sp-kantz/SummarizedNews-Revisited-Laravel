@@ -8,8 +8,6 @@
 
 @section('content')
 
-    <h1>Latest News</h1>
-
     @if (count($summaries)>0)
 
         <div class="container" id="summaries">
@@ -19,9 +17,11 @@
                         <div id="summary_title">{{$summary->summary_title}}</div></a> 
                 </div> 
             @endforeach
+
+            
         </div>
         
-        <div id="pagination">
+        <div class="pagination">
             {{$summaries->links()}}
         </div>
 

@@ -15,7 +15,7 @@ class SummariesController extends Controller
      */
     public function index()
     {
-        $summaries = Summary::paginate(2);
+        $summaries = Summary::paginate(12);
 
 
         return view('summaries.index')->with('summaries', $summaries);

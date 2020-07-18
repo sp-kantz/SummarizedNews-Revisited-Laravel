@@ -7,19 +7,19 @@
 	position : relative;
 	width: 77%;
 	float: left;
-	padding: 18px;
+	padding: 3%;
 }
 
 #summary_title{
-    color: blue;
+    color: rgb(20, 20, 26);
 }
 
 #summary_method{
-    color: purple;
+    color: rgb(37, 35, 44);
 }
 
 #summary_text{
-    color: seagreen;
+    color: rgb(0, 0, 0);
 }
 
 #sources{
@@ -27,6 +27,7 @@
     width:20%;
     float: right;
     text-align: center;
+    padding-top: 3%;
 }
     
 #sources ul {
@@ -41,11 +42,11 @@
 }
 
 #source_domain{
-    color: rgb(168, 32, 66);
+    color: rgb(54, 20, 28);
 }
 
 #source_url{
-    color: grey;
+    color: rgb(43, 54, 21);
     text-decoration: none;
 	display: block;
 }

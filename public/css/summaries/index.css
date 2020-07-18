@@ -41,3 +41,22 @@
 #summary_link:visited{
     color: rgb(66, 49, 49);
 }
+
+.pagination{
+	display: flex;
+	justify-content: center;
+}
+
+.page-item.active .page-link{
+
+	background-color: #646e70;
+	border-style: none;
+}
+
+.page-link{
+	background-color: #b3c0c5;
+	color: rgb(58, 99, 83);
+	margin-left: 1rem;
+	border-style: none;
+	border-radius: 1rem;
+}
