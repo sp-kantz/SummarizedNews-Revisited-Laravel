@@ -1,21 +1,33 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="{{asset('css/app.css')}}">
-        
-        <link rel="stylesheet" href="{{asset('css/main.css')}}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Summarized News | @yield('header_title')</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        @yield('header_links')
-    </head>
-    <body>
-        
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
+    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <title>Summarized News | @yield('header_title')</title>
+    @yield('header_links')
+</head>
+<body>
+    <div id="app">
         @include('layouts.navbar')
-
-        @yield('content')
-                
-    </body>
+        @include('layouts.messages')
+        <main class="py-4">
+            @yield('content')
+        </main>
+    </div>
+</body>
 </html>

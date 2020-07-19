@@ -17,3 +17,6 @@ Route::get('/', 'PagesController@homepage');
 Route::get('/about', 'PagesController@about');
 
 Route::resource('/summaries', 'SummariesController');
+Auth::routes();
+
+Route::get('/dashboard', 'DashboardController@index');

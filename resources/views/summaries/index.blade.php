@@ -16,9 +16,7 @@
                     <a href="/summaries/{{$summary->summary_id}}" id="summary_link">
                         <div id="summary_title">{{$summary->summary_title}}</div></a> 
                 </div> 
-            @endforeach
-
-            
+            @endforeach            
         </div>
         
         <div class="pagination">
@@ -28,7 +26,6 @@
     @else
         <p>No summaries found</p>
     @endif
-    
 
 @endsection
         
