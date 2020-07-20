@@ -12,8 +12,6 @@
 
     <article id="content">
         @if (count($summary)>0)
-            
-        
 
         <div class="article_textarea" id="summaries">
 
@@ -30,19 +28,13 @@
             <article class="article_text" id="summary_text">
                 {{$summary[0]->summary_LSA}}
             </article>
+
+            <hr>
+
+            @include('layouts.comments')         
         </div>
 
-        <div id="sources">
-            <label>Sources</label>
-            <ul>
-            @foreach ($sources as $source)
-                <li>
-                    <label id="source_domain">{{$source->domain}}</label></br>
-                    <a href="{{$source->url}}" id="source_url">{{$source->title}}</a>
-                </li>
-            @endforeach
-            </ul>
-        </div>
+        @include('layouts.sources')
 
         @else
             <p>Error. No summary found</p>

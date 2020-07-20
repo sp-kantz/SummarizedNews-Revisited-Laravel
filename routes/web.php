@@ -20,3 +20,5 @@ Route::resource('/summaries', 'SummariesController');
 Auth::routes();
 
 Route::get('/dashboard', 'DashboardController@index');
+
+Route::post('/summaries/{summary_id}/comment', 'CommentsController@store');

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Comment;
 
 class DashboardController extends Controller
 {
@@ -23,6 +25,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        return view('dashboard');
+        $user_id= auth()->user()->id;
+        $comments=User::find($user_id)->comments()->orderBy('created_at','desc')->get();
+        return view('dashboard')->with('comments', $comments);
     }
 }

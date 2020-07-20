@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Summary;
-use App\Source;
 use App\Comment;
+use Auth;
 
-class SummariesController extends Controller
+class CommentsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,10 +19,7 @@ class SummariesController extends Controller
      */
     public function index()
     {
-        $summaries = Summary::paginate(12);
-
-
-        return view('summaries.index')->with('summaries', $summaries);
+        //
     }
 
     /**
@@ -40,7 +40,20 @@ class SummariesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'comment_text'=>'required|max:5000'
+        ]);
+
+
+        $comment = new Comment();
+        $comment->comment_text = $request->input('comment_text');
+        $comment->user_name = Auth::user()->name;
+        $comment->user_id = Auth::user()->id;
+        $comment->summary_id = $request->input('summary_id');
+        $comment->summary_title = $request->input('summary_title');
+        $comment->save();
+
+        return redirect('/summaries/'.$comment->summary_id)->with('success','Comment success');
     }
 
     /**
@@ -51,11 +64,7 @@ class SummariesController extends Controller
      */
     public function show($id)
     {
-        $summary = Summary::where('summary_id', $id)->get();
-        $sources = Source::where('summary_id', $id)->get();
-        $comments = Comment::where('summary_id', $id)->orderBy('created_at', 'desc')->get();
-        
-        return view('summaries.summary')->with(['summary'=>$summary, 'sources'=>$sources, 'comments'=>$comments]);
+        //
     }
 
     /**
