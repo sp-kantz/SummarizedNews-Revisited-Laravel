@@ -53,7 +53,7 @@ class CommentsController extends Controller
         $comment->summary_title = $request->input('summary_title');
         $comment->save();
 
-        return redirect('/summaries/'.$comment->summary_id)->with('success','Comment success');
+        return redirect('/summaries/'.$comment->summary_id)->with('success','Comment added');
     }
 
     /**
@@ -98,6 +98,9 @@ class CommentsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $comment=Comment::find($id);
+        $comment->delete();
+
+        return back();
     }
 }

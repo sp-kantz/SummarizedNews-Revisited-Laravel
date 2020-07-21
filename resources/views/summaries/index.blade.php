@@ -13,7 +13,7 @@
         <div class="container" id="summaries">
             @foreach ($summaries as $summary)
                 <div id="summary_entry">
-                    <a href="/summaries/{{$summary->summary_id}}" id="summary_link">
+                    <a href="/summaries/{{$summary->id}}" id="summary_link">
                         <div id="summary_title">{{$summary->summary_title}}</div></a> 
                 </div> 
             @endforeach            

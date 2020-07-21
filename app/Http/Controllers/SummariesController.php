@@ -51,8 +51,8 @@ class SummariesController extends Controller
      */
     public function show($id)
     {
-        $summary = Summary::where('summary_id', $id)->get();
-        $sources = Source::where('summary_id', $id)->get();
+        $summary = Summary::find($id);
+        $sources = Source::where('summary_id', $summary->summary_id)->get();
         $comments = Comment::where('summary_id', $id)->orderBy('created_at', 'desc')->get();
         
         return view('summaries.summary')->with(['summary'=>$summary, 'sources'=>$sources, 'comments'=>$comments]);

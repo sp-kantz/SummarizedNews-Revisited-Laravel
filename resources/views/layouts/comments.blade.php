@@ -1,15 +1,13 @@
 <div class="container-fluid">
-    <label class="label-primary">Comments</label>
-    <form method="POST" action="{{url('/summaries/' . $summary[0]->summary_id .'/comment')}}">
+    
+    <form method="POST" action="{{url('/summaries/' . $summary->id .'/comment')}}">
         @csrf
-        <input type="hidden" id="summary_id" name="summary id" value="{{$summary[0]->summary_id}}">
-            <input type="hidden" id="summary_title" name="summary title" value="{{$summary[0]->summary_title}}">
-
+        <input type="hidden" id="summary_id" name="summary id" value="{{$summary->id}}">
+        <input type="hidden" id="summary_title" name="summary title" value="{{$summary->summary_title}}">
 
         <div class="form-group">
-            <div class="col-md-8">
-                
-                <input id="comment" type="text" class="form-control" name="comment_text">
+            <div class="col-md-8">       
+                <textarea id="comment" type="text" class="form-control" name="comment_text" rows="3"></textarea>
                 <button type="submit" class="btn btn-primary">
                     {{ __('Comment') }}
                 </button>
@@ -18,22 +16,48 @@
     </form>
     
     <hr>
-
-    <div class="container" id="comments">
-        @if (count($comments)>0)
-            <ul>
-            @foreach ($comments as $comment)
-                <li>
-                    <label id="comment_user">{{$comment->user_name}}</label>
-                    <small id="comment_text">{{$comment->created_at}}</small></br>
-                    <p id="comment_text">{{$comment->comment_text}}</p>
-                    
-                </li>
-            @endforeach
-            </ul>
-        @else
-            <p>No comments yet</p>
-        @endif
-
+    <div class="row">
+        <div class="panel panel-default widget w-100">
+            <div class="panel-heading">
+                <label class="panel-title">Recent Comments ({{count($comments)}}):</label>
+            </div>
+            <div class="panel-body">
+                @if (count($comments)>0)
+                    <ul class="list-group"> 
+                        @foreach ($comments as $comment)     
+                            <li class="list-group-item comment_box" id="{{$comment->id}}">
+                                <div class="row">
+                                    <div class="col-xs-10 col-md-11">
+                                        <div class="mic-info">
+                                            <strong>{{$comment->user_name}}</strong><small><em> on </em>{{$comment->created_at}}</small>
+                                        </div>                                
+                                        <div class="comment-text" id="comment_text">{{$comment->comment_text}}</div>
+                                        @if (Auth::user()->id == $comment->user_id)
+                                            <div class="row">
+                                                <form method="POST" action="{{url('/dashboard/delete/' . $comment->id)}}">
+                                                    @csrf
+                                                    <button type="button" class="btn btn-primary btn-xs" title="Edit" href="a">
+                                                        <span class="glyphicon glyphicon-pencil"></span>
+                                                    </button>
+                                                </form>
+                                                <form method="POST" action="{{url('/dashboard/delete/' . $comment->id)}}">
+                                                    @csrf
+                                                    <button type="submit" class="btn btn-danger btn-xs" title="Delete">
+                                                        <span class="glyphicon glyphicon-trash"></span>
+                                                    </button>
+                                                </form>
+                                            </div>
+                                        @endif  
+                                    </div>
+                                </div>
+                            </li>
+                        @endforeach
+                    </ul>
+                @else
+                     <p>No comments yet</p>
+                @endif
+            </div>
+        </div>
     </div>
-</div>  
+</div>
+

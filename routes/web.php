@@ -19,6 +19,9 @@ Route::get('/about', 'PagesController@about');
 Route::resource('/summaries', 'SummariesController');
 Auth::routes();
 
+Route::post('/summaries/{summary_id}/comment', 'CommentsController@store');
+Route::post('/dashboard/delete/{comment_id}', 'CommentsController@destroy');
+
 Route::get('/dashboard', 'DashboardController@index');
 
-Route::post('/summaries/{summary_id}/comment', 'CommentsController@store');
+

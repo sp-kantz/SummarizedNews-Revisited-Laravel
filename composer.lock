@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "cbd22b85083843df4aee2460004aa180",
+    "content-hash": "7982032c5cd4c55c646b8ee492d3e92f",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3506,7 +3506,7 @@
         },
         {
             "name": "symfony/process",
-            "version": "v5.1.1",
+            "version": "v5.1.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/process.git",

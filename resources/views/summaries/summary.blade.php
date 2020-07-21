@@ -1,44 +1,40 @@
 @extends('layouts.app')
 
-@section('header_title', $summary[0]->summary_title)
+@section('header_title', $summary->summary_title)
 
 @section('header_links')
     <link href="{{ URL::asset('css/summaries/summary.css') }}" rel="stylesheet">
 @endsection
-
-@section('page-header-title', 'article')
     
 @section('content')
 
     <article id="content">
-        @if (count($summary)>0)
+        
 
         <div class="article_textarea" id="summaries">
 
-            <h2 id="summary_title">{{$summary[0]->summary_title}}</h2>
+            <h2 id="summary_title">{{$summary->summary_title}}</h2>
 
             <label id="summary_method">Graph-based Summary</label>
             <article class="article_text" id="summary_text">
-                {{$summary[0]->summary_graph}}
+                {{$summary->summary_graph}}
             </article>
 
             </br>
 
             <label id="summary_method">LSA-based Summary</label>
             <article class="article_text" id="summary_text">
-                {{$summary[0]->summary_LSA}}
+                {{$summary->summary_LSA}}
             </article>
 
-            <hr>
-
-            @include('layouts.comments')         
+            <hr>       
+            @include('layouts.comments')  
         </div>
+
+        
 
         @include('layouts.sources')
 
-        @else
-            <p>Error. No summary found</p>
-        @endif
     </article>
 
 @endsection

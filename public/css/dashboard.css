@@ -1,0 +1,10 @@
+a{
+    color: rgb(37, 51, 10);
+    text-decoration: none;
+	display: block;
+}
+
+a:hover{
+    text-decoration: none;
+    color: rgb(61, 83, 16);
+}

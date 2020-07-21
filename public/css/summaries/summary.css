@@ -64,3 +64,10 @@ h2{
 	color: #000000;
 	text-align: center;
 }
+
+.comment_box{
+    border-style: solid;
+    margin-top: 1rem;
+    border-width: 1px;
+    background-color: rgb(118, 138, 139);
+}
