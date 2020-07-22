@@ -99,6 +99,11 @@ class CommentsController extends Controller
     public function destroy($id)
     {
         $comment=Comment::find($id);
+
+        if (auth()->user()->id != $comment->user_id) {
+            return back()->with('error', 'Unauthorized Action');
+        }
+
         $comment->delete();
 
         return back();

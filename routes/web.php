@@ -24,4 +24,5 @@ Route::post('/dashboard/delete/{comment_id}', 'CommentsController@destroy');
 
 Route::get('/dashboard', 'DashboardController@index');
 
+Route::get('/exec', 'ExecController@exec');
 

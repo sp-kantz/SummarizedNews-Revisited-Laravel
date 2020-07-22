@@ -4,9 +4,19 @@
 
 @section('header_links')
     <link href="{{ URL::asset('css/dashboard.css') }}" rel="stylesheet">
+    @if (auth()->user()->id == 1)
+        <script src="/js/adminButton.js"></script>
+    @endif
 @endsection
 
 @section('content')
+
+
+@if (auth()->user()->id == 1)
+    <input id="startButton" onclick="start()" type="button" class="btn btn-dark pull-right" value="Gather and Summarize News">
+
+    <br>
+@endif
 
 <div class="container">
     <div class="row justify-content-center">

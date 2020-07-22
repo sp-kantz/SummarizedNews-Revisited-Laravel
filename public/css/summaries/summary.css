@@ -12,6 +12,7 @@
 
 #summary_title{
     color: rgb(20, 20, 26);
+    margin-bottom: 2rem;
 }
 
 #summary_method{
@@ -66,8 +67,14 @@ h2{
 }
 
 .comment_box{
+    width: 100%;
     border-style: solid;
     margin-top: 1rem;
-    border-width: 1px;
+    border-width: 3px;
     background-color: rgb(118, 138, 139);
+}
+
+#comment_text{
+    justify-content: center;
+    width: 97%;
 }

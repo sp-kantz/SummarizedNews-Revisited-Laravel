@@ -25,6 +25,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         // $schedule->command('inspire')->hourly();
+        //$schedule->exec('python /home/spyros/Summarized-News/system/summarizer_filesystem/scripts/py/clean.py')->everyMinute()->evenInMaintenanceMode();
     }
 
     /**
