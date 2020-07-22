@@ -4,7 +4,9 @@
 
 Remake of my thesis project on Extractive Multi-Document Summarization.
 
-Added user accounts. Users can leave comments on summaries.
++ Added user accounts. 
++ Users can leave comments on summaries.
++ Admin (user with id=1) can start the process with a button.
 
 ---------------------------------------------------------------------
 
