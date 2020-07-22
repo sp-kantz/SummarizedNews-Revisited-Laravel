@@ -11,16 +11,10 @@
 
 @section('content')
 
-
 @if (auth()->user()->id == 1)
     <input id="startButton" onclick="start()" type="button" class="btn btn-dark pull-right" value="Gather and Summarize News">
     <div class="label-info" id="status"></div>
     <br>
-
-    <form method="GET" action="{{url('/exec')}}">
-        @csrf
-        <button type="submit" class="btn btn-danger" ><small>Delete</small></button>
-    </form>
 @endif
 
 <div class="container">

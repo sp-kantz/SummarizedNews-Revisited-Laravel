@@ -44,7 +44,6 @@ class CommentsController extends Controller
             'comment_text'=>'required|max:5000'
         ]);
 
-
         $comment = new Comment();
         $comment->comment_text = $request->input('comment_text');
         $comment->user_name = Auth::user()->name;

@@ -10,10 +10,11 @@
 
     <article id="content">
         
-
         <div class="article_textarea" id="summaries">
 
             <h2 id="summary_title">{{$summary->summary_title}}</h2>
+            <small><em>{{$summary->created_at}}123/123/213</em></small>
+            <hr>
 
             <label id="summary_method">Graph-based Summary</label>
             <article class="article_text" id="summary_text">
@@ -31,12 +32,8 @@
             @include('layouts.comments')  
         </div>
 
-        
-
         @include('layouts.sources')
 
     </article>
-
 @endsection
-        
-            
+                

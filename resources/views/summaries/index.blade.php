@@ -14,7 +14,10 @@
             @foreach ($summaries as $summary)
                 <div id="summary_entry">
                     <a href="/summaries/{{$summary->id}}" id="summary_link">
-                        <div id="summary_title">{{$summary->summary_title}}</div></a> 
+                        <div id="summary_title">{{$summary->summary_title}}<br>
+                            <em><small>{{$summary->created_at}}</small></em>
+                        </div>
+                    </a> 
                 </div> 
             @endforeach            
         </div>
