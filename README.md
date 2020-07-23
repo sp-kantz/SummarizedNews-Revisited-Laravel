@@ -8,6 +8,11 @@ Remake of my thesis project on Extractive Multi-Document Summarization.
 + Users can leave comments on summaries.
 + Admin (user with id=1) can start the process with a button.
 
+
+-> Database: SummarizedNews.sql - Credentials on .env file
+-> Python has to be installed on server.
+-> Essential python libs: scrapy, scikit-learn, nltk, networkx, mysql-connector
+
 ---------------------------------------------------------------------
 
 System to collect news articles from the web,
